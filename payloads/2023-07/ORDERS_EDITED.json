@@ -1,0 +1,39 @@
+ORDERS_EDITED
+
+{
+  "order_edit": {
+    "id": 78912328793123782,
+    "app_id": null,
+    "created_at": "2021-12-31T19:00:00-05:00",
+    "notify_customer": false,
+    "order_id": 820982911946154508,
+    "staff_note": "",
+    "user_id": null,
+    "line_items": {
+      "additions": [
+        {
+          "id": 78643924236718232,
+          "delta": 1
+        }
+      ],
+      "removals": [
+        {
+          "id": 866550311766439020,
+          "delta": 1
+        }
+      ]
+    },
+    "discounts": {
+      "line_item": {
+        "additions": [
+
+        ]
+      }
+    },
+    "shipping_lines": {
+      "additions": [
+
+      ]
+    }
+  }
+}

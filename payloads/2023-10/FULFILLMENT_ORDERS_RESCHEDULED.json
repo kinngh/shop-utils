@@ -1,0 +1,9 @@
+FULFILLMENT_ORDERS_RESCHEDULED
+
+{
+  "fulfillment_order": {
+    "id": "gid:\/\/shopify\/FulfillmentOrder\/1",
+    "status": "scheduled",
+    "fulfill_at": "2021-12-31T19:00:00-05:00"
+  }
+}

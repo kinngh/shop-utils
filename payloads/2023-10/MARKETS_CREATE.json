@@ -1,0 +1,12 @@
+MARKETS_CREATE
+
+{
+  "id": 188558248,
+  "name": "United States",
+  "enabled": true,
+  "regions": [
+    {
+      "country_code": "US"
+    }
+  ]
+}
