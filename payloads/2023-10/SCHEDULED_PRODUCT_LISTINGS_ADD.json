@@ -1,6 +1,4 @@
-SCHEDULED_PRODUCT_LISTINGS_ADD
-
-{
+SCHEDULED_PRODUCT_LISTINGS_ADD{
   "scheduled_product_listing": {
     "product_id": 788032119674292922,
     "created_at": null,

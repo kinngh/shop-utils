@@ -1,6 +1,4 @@
-DOMAINS_CREATE
-
-{
+DOMAINS_CREATE{
   "id": 690933842,
   "host": "jsmith.myshopify.com",
   "ssl_enabled": true,

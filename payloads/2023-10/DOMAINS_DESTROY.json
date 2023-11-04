@@ -1,6 +1,4 @@
-DOMAINS_DESTROY
-
-{
+DOMAINS_DESTROY{
   "id": 690933842,
   "host": "jsmith.myshopify.com",
   "ssl_enabled": true,

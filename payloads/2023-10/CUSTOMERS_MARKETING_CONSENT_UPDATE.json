@@ -1,6 +1,4 @@
-CUSTOMERS_MARKETING_CONSENT_UPDATE
-
-{
+CUSTOMERS_MARKETING_CONSENT_UPDATE{
   "id": 706405506930370084,
   "phone": null,
   "sms_marketing_consent": {

@@ -1,6 +1,4 @@
-MARKETS_UPDATE
-
-{
+MARKETS_UPDATE{
   "id": 188558248,
   "name": "United States",
   "enabled": true,

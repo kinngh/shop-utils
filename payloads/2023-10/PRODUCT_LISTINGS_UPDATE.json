@@ -1,6 +1,4 @@
-PRODUCT_LISTINGS_UPDATE
-
-{
+PRODUCT_LISTINGS_UPDATE{
   "product_listing": {
     "product_id": 788032119674292922,
     "created_at": null,

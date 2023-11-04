@@ -1,11 +1,9 @@
-SUBSCRIPTION_CONTRACTS_CREATE
-
-{
-  "admin_graphql_api_id": "gid:\/\/shopify\/SubscriptionContract\/9686421087",
-  "id": 9686421087,
+SUBSCRIPTION_CONTRACTS_CREATE{
+  "admin_graphql_api_id": "gid:\/\/shopify\/SubscriptionContract\/5260563638",
+  "id": 5260563638,
   "billing_policy": {
-    "interval": "month",
-    "interval_count": 1,
+    "interval": "week",
+    "interval_count": 4,
     "min_cycles": 1,
     "max_cycles": 2
   },
@@ -19,5 +17,5 @@ SUBSCRIPTION_CONTRACTS_CREATE
   "status": "active",
   "admin_graphql_api_origin_order_id": "gid:\/\/shopify\/Order\/1",
   "origin_order_id": 1,
-  "revision_id": "4369865026"
+  "revision_id": "540278665"
 }

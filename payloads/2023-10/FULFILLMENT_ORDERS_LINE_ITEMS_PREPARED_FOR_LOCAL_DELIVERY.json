@@ -1,6 +1,4 @@
-FULFILLMENT_ORDERS_LINE_ITEMS_PREPARED_FOR_LOCAL_DELIVERY
-
-{
+FULFILLMENT_ORDERS_LINE_ITEMS_PREPARED_FOR_LOCAL_DELIVERY{
   "fulfillment_order": {
     "id": "gid:\/\/shopify\/FulfillmentOrder\/1",
     "status": "open",

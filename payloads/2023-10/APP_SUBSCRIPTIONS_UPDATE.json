@@ -1,8 +1,6 @@
-APP_SUBSCRIPTIONS_UPDATE
-
-{
+APP_SUBSCRIPTIONS_UPDATE{
   "app_subscription": {
-    "admin_graphql_api_id": "gid:\/\/shopify\/AppSubscription\/1029266961",
+    "admin_graphql_api_id": "gid:\/\/shopify\/AppSubscription\/1029266996",
     "name": "Webhook Test",
     "status": "PENDING",
     "admin_graphql_api_shop_id": "gid:\/\/shopify\/Shop\/548380009",

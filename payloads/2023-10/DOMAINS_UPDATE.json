@@ -1,6 +1,4 @@
-DOMAINS_UPDATE
-
-{
+DOMAINS_UPDATE{
   "id": 690933842,
   "host": "jsmith.myshopify.com",
   "ssl_enabled": true,

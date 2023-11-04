@@ -1,6 +1,4 @@
-FULFILLMENT_ORDERS_CANCELLATION_REQUEST_SUBMITTED
-
-{
+FULFILLMENT_ORDERS_CANCELLATION_REQUEST_SUBMITTED{
   "fulfillment_order": {
     "id": "gid:\/\/shopify\/FulfillmentOrder\/1",
     "status": "in_progress",

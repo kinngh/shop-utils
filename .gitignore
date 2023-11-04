@@ -5,6 +5,9 @@ sanity/
 mental_well_being/
 emotional_stability/
 
+## Generated files that may contain secrets
+config/webhook_trigger.md
+
 # Logs
 logs
 *.log
@@ -46,6 +49,8 @@ bower_components
 build/Release
 
 # Dependency directories
+package-lock.json
+bun.lockb
 node_modules/
 jspm_packages/
 

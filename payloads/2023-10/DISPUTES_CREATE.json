@@ -1,6 +1,4 @@
-DISPUTES_CREATE
-
-{
+DISPUTES_CREATE{
   "id": 285332461850802063,
   "order_id": 820982911946154508,
   "type": "chargeback",

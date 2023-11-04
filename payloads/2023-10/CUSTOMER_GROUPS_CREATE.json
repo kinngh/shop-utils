@@ -1,6 +1,4 @@
-CUSTOMER_GROUPS_CREATE
-
-{
+CUSTOMER_GROUPS_CREATE{
   "id": 239443597569284757,
   "name": "Repeat Customers",
   "created_at": "2021-12-31T19:00:00-05:00",

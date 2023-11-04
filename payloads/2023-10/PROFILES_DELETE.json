@@ -1,5 +1,3 @@
-PROFILES_DELETE
-
-{
+PROFILES_DELETE{
   "id": 1
 }

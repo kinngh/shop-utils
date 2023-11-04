@@ -1,6 +1,4 @@
-PRODUCT_LISTINGS_ADD
-
-{
+PRODUCT_LISTINGS_ADD{
   "product_listing": {
     "product_id": 788032119674292922,
     "created_at": null,

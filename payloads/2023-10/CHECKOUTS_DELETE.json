@@ -1,6 +1,4 @@
-CHECKOUTS_DELETE
-
-{
+CHECKOUTS_DELETE{
   "id": 981820079255243537,
   "presentment_currency": "USD",
   "buyer_accepts_sms_marketing": false,

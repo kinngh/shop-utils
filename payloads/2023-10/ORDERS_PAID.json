@@ -1,6 +1,4 @@
-ORDERS_PAID
-
-{
+ORDERS_PAID{
   "id": 820982911946154508,
   "admin_graphql_api_id": "gid:\/\/shopify\/Order\/820982911946154508",
   "app_id": null,
@@ -100,14 +98,14 @@ ORDERS_PAID
   "source_identifier": null,
   "source_name": "web",
   "source_url": null,
-  "subtotal_price": "393.00",
+  "subtotal_price": "388.00",
   "subtotal_price_set": {
     "shop_money": {
-      "amount": "393.00",
+      "amount": "388.00",
       "currency_code": "USD"
     },
     "presentment_money": {
-      "amount": "393.00",
+      "amount": "388.00",
       "currency_code": "USD"
     }
   },
@@ -119,14 +117,14 @@ ORDERS_PAID
   "taxes_included": false,
   "test": true,
   "token": "123456abcd",
-  "total_discounts": "5.00",
+  "total_discounts": "20.00",
   "total_discounts_set": {
     "shop_money": {
-      "amount": "5.00",
+      "amount": "20.00",
       "currency_code": "USD"
     },
     "presentment_money": {
-      "amount": "5.00",
+      "amount": "20.00",
       "currency_code": "USD"
     }
   },
@@ -142,14 +140,14 @@ ORDERS_PAID
     }
   },
   "total_outstanding": "398.00",
-  "total_price": "403.00",
+  "total_price": "388.00",
   "total_price_set": {
     "shop_money": {
-      "amount": "403.00",
+      "amount": "388.00",
       "currency_code": "USD"
     },
     "presentment_money": {
-      "amount": "403.00",
+      "amount": "388.00",
       "currency_code": "USD"
     }
   },

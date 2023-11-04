@@ -1,11 +1,9 @@
-CUSTOMERS_DISABLE
-
-{
+CUSTOMERS_DISABLE{
   "id": 706405506930370084,
   "email": "bob@biller.com",
   "accepts_marketing": true,
-  "created_at": null,
-  "updated_at": null,
+  "created_at": "2021-12-31T19:00:00-05:00",
+  "updated_at": "2021-12-31T19:00:00-05:00",
   "first_name": "Bob",
   "last_name": "Biller",
   "orders_count": 0,
@@ -23,7 +21,7 @@ CUSTOMERS_DISABLE
   "addresses": [
 
   ],
-  "accepts_marketing_updated_at": null,
+  "accepts_marketing_updated_at": "2021-12-31T19:00:00-05:00",
   "marketing_opt_in_level": null,
   "tax_exemptions": [
 

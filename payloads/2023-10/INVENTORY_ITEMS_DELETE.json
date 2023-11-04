@@ -1,6 +1,4 @@
-INVENTORY_ITEMS_DELETE
-
-{
+INVENTORY_ITEMS_DELETE{
   "id": 271878346596884015,
   "country_code_of_origin": null,
   "province_code_of_origin": null,

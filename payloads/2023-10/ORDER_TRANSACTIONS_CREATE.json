@@ -1,6 +1,4 @@
-ORDER_TRANSACTIONS_CREATE
-
-{
+ORDER_TRANSACTIONS_CREATE{
   "id": 120560818172775265,
   "order_id": 820982911946154508,
   "kind": "authorization",
@@ -27,7 +25,8 @@ ORDER_TRANSACTIONS_CREATE
     "credit_card_name": null,
     "credit_card_wallet": null,
     "credit_card_expiration_month": null,
-    "credit_card_expiration_year": null
+    "credit_card_expiration_year": null,
+    "payment_method_name": "visa"
   },
   "receipt": {
   },

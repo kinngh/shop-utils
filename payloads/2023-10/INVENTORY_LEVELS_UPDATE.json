@@ -1,6 +1,4 @@
-INVENTORY_LEVELS_UPDATE
-
-{
+INVENTORY_LEVELS_UPDATE{
   "inventory_item_id": 271878346596884015,
   "location_id": 24826418,
   "available": null,

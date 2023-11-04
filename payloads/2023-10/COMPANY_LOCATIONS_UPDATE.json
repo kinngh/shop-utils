@@ -1,6 +1,4 @@
-COMPANY_LOCATIONS_UPDATE
-
-{
+COMPANY_LOCATIONS_UPDATE{
   "name": "Montreal",
   "external_id": "123456789",
   "phone": "555-555-5555",

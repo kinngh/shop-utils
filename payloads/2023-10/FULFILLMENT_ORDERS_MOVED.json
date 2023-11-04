@@ -1,6 +1,4 @@
-FULFILLMENT_ORDERS_MOVED
-
-{
+FULFILLMENT_ORDERS_MOVED{
   "original_fulfillment_order": {
     "id": "gid:\/\/shopify\/FulfillmentOrder\/1",
     "status": "closed",
@@ -12,6 +10,12 @@ FULFILLMENT_ORDERS_MOVED
     "assigned_location_id": "gid:\/\/shopify\/Location\/1"
   },
   "destination_location_id": "gid:\/\/shopify\/Location\/1",
+  "fulfillment_order_line_items_requested": [
+    {
+      "id": "gid:\/\/shopify\/FulfillmentOrderLineItem\/1",
+      "quantity": 1
+    }
+  ],
   "source_location": {
     "id": "gid:\/\/shopify\/Location\/0"
   }

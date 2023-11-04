@@ -1,6 +1,4 @@
-FULFILLMENT_ORDERS_CANCELLED
-
-{
+FULFILLMENT_ORDERS_CANCELLED{
   "fulfillment_order": {
     "id": "gid:\/\/shopify\/FulfillmentOrder\/1",
     "status": "cancelled"

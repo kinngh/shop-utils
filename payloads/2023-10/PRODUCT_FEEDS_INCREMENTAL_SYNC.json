@@ -1,6 +1,4 @@
-PRODUCT_FEEDS_INCREMENTAL_SYNC
-
-{
+PRODUCT_FEEDS_INCREMENTAL_SYNC{
   "metadata": {
     "action": "CREATE",
     "type": "INCREMENTAL",

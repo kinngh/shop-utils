@@ -1,6 +1,4 @@
-COLLECTIONS_CREATE
-
-{
+COLLECTIONS_CREATE{
   "id": 408372092144951419,
   "handle": "mynewcollection",
   "title": "My New Collection",

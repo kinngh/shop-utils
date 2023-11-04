@@ -1,6 +1,4 @@
-LOCATIONS_CREATE
-
-{
+LOCATIONS_CREATE{
   "id": 866550311766439020,
   "name": "Example Shop",
   "address1": "34 Example Street",

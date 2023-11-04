@@ -1,6 +1,4 @@
-COMPANIES_DELETE
-
-{
+COMPANIES_DELETE{
   "name": "Example Company",
   "note": "This is an example company",
   "external_id": "123456789",

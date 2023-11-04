@@ -1,39 +1,38 @@
-PRODUCTS_UPDATE
-
-{
-  "id": 788032119674292922,
-  "title": "Example T-Shirt",
+PRODUCTS_UPDATE{
+  "admin_graphql_api_id": "gid:\/\/shopify\/Product\/788032119674292922",
   "body_html": "An example T-Shirt",
-  "vendor": "Acme",
-  "product_type": "Shirts",
   "created_at": null,
   "handle": "example-t-shirt",
-  "updated_at": "2021-12-31T19:00:00-05:00",
+  "id": 788032119674292922,
+  "product_type": "Shirts",
   "published_at": "2021-12-31T19:00:00-05:00",
   "template_suffix": null,
+  "title": "Example T-Shirt",
+  "updated_at": "2021-12-31T19:00:00-05:00",
+  "vendor": "Acme",
   "status": "active",
   "published_scope": "web",
   "tags": "example, mens, t-shirt",
-  "admin_graphql_api_id": "gid:\/\/shopify\/Product\/788032119674292922",
   "variants": [
     {
-      "id": 642667041472713922,
-      "product_id": 788032119674292922,
-      "title": "",
-      "price": "19.99",
-      "sku": "example-shirt-s",
-      "position": 0,
-      "inventory_policy": "deny",
+      "admin_graphql_api_id": "gid:\/\/shopify\/ProductVariant\/642667041472713922",
+      "barcode": null,
       "compare_at_price": "24.99",
+      "created_at": null,
       "fulfillment_service": "manual",
+      "id": 642667041472713922,
       "inventory_management": "shopify",
+      "inventory_policy": "deny",
+      "position": 0,
+      "price": "19.99",
+      "product_id": 788032119674292922,
+      "sku": "example-shirt-s",
+      "taxable": true,
+      "title": "",
+      "updated_at": null,
       "option1": "Small",
       "option2": null,
       "option3": null,
-      "created_at": null,
-      "updated_at": null,
-      "taxable": true,
-      "barcode": null,
       "grams": 200,
       "image_id": null,
       "weight": 200.0,
@@ -41,27 +40,27 @@ PRODUCTS_UPDATE
       "inventory_item_id": null,
       "inventory_quantity": 75,
       "old_inventory_quantity": 75,
-      "requires_shipping": true,
-      "admin_graphql_api_id": "gid:\/\/shopify\/ProductVariant\/642667041472713922"
+      "requires_shipping": true
     },
     {
-      "id": 757650484644203962,
-      "product_id": 788032119674292922,
-      "title": "",
-      "price": "19.99",
-      "sku": "example-shirt-m",
-      "position": 0,
-      "inventory_policy": "deny",
+      "admin_graphql_api_id": "gid:\/\/shopify\/ProductVariant\/757650484644203962",
+      "barcode": null,
       "compare_at_price": "24.99",
+      "created_at": null,
       "fulfillment_service": "manual",
+      "id": 757650484644203962,
       "inventory_management": "shopify",
+      "inventory_policy": "deny",
+      "position": 0,
+      "price": "19.99",
+      "product_id": 788032119674292922,
+      "sku": "example-shirt-m",
+      "taxable": true,
+      "title": "",
+      "updated_at": null,
       "option1": "Medium",
       "option2": null,
       "option3": null,
-      "created_at": null,
-      "updated_at": null,
-      "taxable": true,
-      "barcode": null,
       "grams": 200,
       "image_id": null,
       "weight": 200.0,
@@ -69,38 +68,14 @@ PRODUCTS_UPDATE
       "inventory_item_id": null,
       "inventory_quantity": 50,
       "old_inventory_quantity": 50,
-      "requires_shipping": true,
-      "admin_graphql_api_id": "gid:\/\/shopify\/ProductVariant\/757650484644203962"
+      "requires_shipping": true
     }
   ],
   "options": [
-    {
-      "id": 527050010214937811,
-      "product_id": 788032119674292922,
-      "name": "Title",
-      "position": 1,
-      "values": [
-        "Small",
-        "Medium"
-      ]
-    }
+
   ],
   "images": [
-    {
-      "id": 539438707724640965,
-      "product_id": 788032119674292922,
-      "position": 0,
-      "created_at": null,
-      "updated_at": null,
-      "alt": null,
-      "width": 323,
-      "height": 434,
-      "src": "\/\/cdn.shopify.com\/shopifycloud\/shopify\/assets\/shopify_shirt-39bb555874ecaeed0a1170417d58bbcf792f7ceb56acfe758384f788710ba635.png",
-      "variant_ids": [
 
-      ],
-      "admin_graphql_api_id": "gid:\/\/shopify\/ProductImage\/539438707724640965"
-    }
   ],
   "image": null
 }

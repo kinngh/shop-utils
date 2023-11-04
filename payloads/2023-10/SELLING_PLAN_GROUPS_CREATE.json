@@ -1,8 +1,6 @@
-SELLING_PLAN_GROUPS_CREATE
-
-{
-  "admin_graphql_api_id": "gid:\/\/shopify\/SellingPlanGroup\/1039518912",
-  "id": 1039518912,
+SELLING_PLAN_GROUPS_CREATE{
+  "admin_graphql_api_id": "gid:\/\/shopify\/SellingPlanGroup\/1039518989",
+  "id": 1039518989,
   "name": "Subscribe & Save",
   "merchant_code": "sub-n-save",
   "admin_graphql_api_app": "gid:\/\/shopify\/App\/2525000003",

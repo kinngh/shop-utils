@@ -1,8 +1,6 @@
-APP_PURCHASES_ONE_TIME_UPDATE
-
 {
   "app_purchase_one_time": {
-    "admin_graphql_api_id": "gid:\/\/shopify\/AppPurchaseOneTime\/1017262355",
+    "admin_graphql_api_id": "gid:\/\/shopify\/AppPurchaseOneTime\/1017262379",
     "name": "Webhook Test",
     "status": "PENDING",
     "admin_graphql_api_shop_id": "gid:\/\/shopify\/Shop\/548380009",

@@ -1,6 +1,4 @@
-INVENTORY_LEVELS_CONNECT
-
-{
+INVENTORY_LEVELS_CONNECT{
   "inventory_item_id": 271878346596884015,
   "location_id": 24826418,
   "available": null,

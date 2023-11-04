@@ -1,6 +1,4 @@
-FULFILLMENTS_CREATE
-
-{
+FULFILLMENTS_CREATE{
   "id": 123456,
   "order_id": 820982911946154508,
   "status": "pending",
@@ -133,6 +131,20 @@ FULFILLMENTS_CREATE
         {
           "amount": "5.00",
           "discount_application_index": 0,
+          "amount_set": {
+            "shop_money": {
+              "amount": "5.00",
+              "currency_code": "USD"
+            },
+            "presentment_money": {
+              "amount": "5.00",
+              "currency_code": "USD"
+            }
+          }
+        },
+        {
+          "amount": "5.00",
+          "discount_application_index": 2,
           "amount_set": {
             "shop_money": {
               "amount": "5.00",

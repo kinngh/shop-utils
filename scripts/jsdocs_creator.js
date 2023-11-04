@@ -1,13 +1,14 @@
 import fs from "fs/promises";
 import path from "path";
-import { fileURLToPath } from "url";
+import "dotenv/config";
 
-const apiVersion = "2023-10";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const apiVersion = process.env.API_VERSION;
 
-const dirPath = path.resolve(__dirname, "_developer");
-const outputPath = path.resolve(__dirname, `_developer/types/${apiVersion}/webhooks.js`);
+const dirPath = path.resolve(process.cwd(), "_developer");
+const outputPath = path.resolve(
+  process.cwd(),
+  `types/${apiVersion}/webhooks.js`
+);
 
 let typedefs = {};
 
@@ -60,12 +61,20 @@ const convertToJSDoc = async () => {
 
     for (const file of jsonFiles) {
       const filePath = path.join(dirPath, file);
-      const data = await fs.readFile(filePath, "utf-8");
+      let data = await fs.readFile(filePath, "utf-8");
 
-      const firstLineEndIndex = data.indexOf("\n");
-      const title = data.slice(0, firstLineEndIndex).trim();
-      const jsonData = JSON.parse(data.slice(firstLineEndIndex).trim());
+      // Find the first occurrence of an opening curly brace
+      const firstBraceIndex = data.indexOf("{");
 
+      // If there is an opening brace, ignore everything before it
+      if (firstBraceIndex !== -1) {
+        data = data.substring(firstBraceIndex);
+      }
+
+      // Parse the remaining string as JSON
+      const jsonData = JSON.parse(data);
+
+      const title = file.replace(".json", ""); // Using file name as title
       typedefs[title] = generateJSDocForObject(jsonData, title);
     }
 

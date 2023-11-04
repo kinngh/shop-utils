@@ -1,6 +1,4 @@
-CHECKOUTS_UPDATE
-
-{
+CHECKOUTS_UPDATE{
   "id": 981820079255243537,
   "token": "123123123",
   "cart_token": "eeafa272cebfd4b22385bc4b645e762c",
@@ -38,12 +36,12 @@ CHECKOUTS_UPDATE
       "discount_allocations": [
 
       ],
-      "key": "ccbbb791db0165dff6446befe847fa73",
-      "destination_location_id": 938998227,
+      "key": "a990b096d910951f10ab9aaed6b57cf5",
+      "destination_location_id": 938998345,
       "fulfillment_service": "manual",
       "gift_card": false,
       "grams": 454,
-      "origin_location_id": 938998226,
+      "origin_location_id": 938998344,
       "presentment_title": "IPod Nano - 8GB",
       "presentment_variant_title": "",
       "product_id": 632910392,
@@ -74,12 +72,12 @@ CHECKOUTS_UPDATE
       "discount_allocations": [
 
       ],
-      "key": "ccbbb791db0165dff6446befe847fa73",
-      "destination_location_id": 938998227,
+      "key": "a990b096d910951f10ab9aaed6b57cf5",
+      "destination_location_id": 938998345,
       "fulfillment_service": "manual",
       "gift_card": false,
       "grams": 454,
-      "origin_location_id": 938998226,
+      "origin_location_id": 938998344,
       "presentment_title": "IPod Nano - 8GB",
       "presentment_variant_title": "",
       "product_id": 632910392,

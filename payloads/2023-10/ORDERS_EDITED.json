@@ -1,6 +1,4 @@
-ORDERS_EDITED
-
-{
+ORDERS_EDITED{
   "order_edit": {
     "id": 78912328793123782,
     "app_id": null,
@@ -26,6 +24,9 @@ ORDERS_EDITED
     "discounts": {
       "line_item": {
         "additions": [
+
+        ],
+        "removals": [
 
         ]
       }

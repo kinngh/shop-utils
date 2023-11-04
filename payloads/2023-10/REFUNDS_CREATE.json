@@ -1,6 +1,4 @@
-REFUNDS_CREATE
-
-{
+REFUNDS_CREATE{
   "id": 890088186047892319,
   "order_id": 820982911946154508,
   "created_at": null,
@@ -184,6 +182,20 @@ REFUNDS_CREATE
           {
             "amount": "5.00",
             "discount_application_index": 0,
+            "amount_set": {
+              "shop_money": {
+                "amount": "5.00",
+                "currency_code": "USD"
+              },
+              "presentment_money": {
+                "amount": "5.00",
+                "currency_code": "USD"
+              }
+            }
+          },
+          {
+            "amount": "5.00",
+            "discount_application_index": 2,
             "amount_set": {
               "shop_money": {
                 "amount": "5.00",

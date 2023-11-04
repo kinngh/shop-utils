@@ -1,6 +1,4 @@
-CUSTOMERS_MERGE
-
-{
+CUSTOMERS_MERGE{
   "admin_graphql_api_customer_kept_id": "gid:\/\/shopify\/Customer\/1",
   "admin_graphql_api_customer_deleted_id": "gid:\/\/shopify\/Customer\/2",
   "admin_graphql_api_job_id": null,

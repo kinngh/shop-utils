@@ -1,13 +1,3 @@
-/**
- *
- * Subscribe to all possible webhook topics
- * and in the function, write them in `_developer/` as a JSON
- * The first line is the name of the topic
- * Followed by the JSON payload
- * All the JSON files are invalid, just because.
- *
- */
-
 import { DeliveryMethod, shopifyApi } from "@shopify/shopify-api";
 import "@shopify/shopify-api/adapters/node";
 import fs from "fs";
@@ -30,7 +20,7 @@ const functionCommonCallback = (topic, shop, webhookRequestBody) => {
   console.log("Processing webhook", topic);
   fs.writeFile(
     `${process.cwd()}/_developer/${topic}.json`,
-    `${topic}\n\n${webhookRequestBody}`,
+    `${topic}${webhookRequestBody}`,
     (err) => {
       if (err) {
         console.log("Error happened writing to file", topic);
@@ -353,17 +343,20 @@ shopify.webhooks.addHandlers({
   },
   FULFILLMENT_ORDERS_CANCELLATION_REQUEST_ACCEPTED: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks/{",
+    callbackUrl:
+      "/api/webhooks/fulfillment_orders_cancellation_request_accepted",
     callback: functionCommonCallback,
   },
   FULFILLMENT_ORDERS_CANCELLATION_REQUEST_REJECTED: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks/{",
+    callbackUrl:
+      "/api/webhooks/fulfillment_orders_cancellation_request_rejected",
     callback: functionCommonCallback,
   },
   FULFILLMENT_ORDERS_CANCELLATION_REQUEST_SUBMITTED: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks/{",
+    callbackUrl:
+      "/api/webhooks/fulfillment_orders_cancellation_request_submitted",
     callback: functionCommonCallback,
   },
   FULFILLMENT_ORDERS_CANCELLED: {
@@ -373,22 +366,26 @@ shopify.webhooks.addHandlers({
   },
   FULFILLMENT_ORDERS_FULFILLMENT_REQUEST_ACCEPTED: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks/{",
+    callbackUrl:
+      "/api/webhooks/fulfillment_orders_fulfillment_request_accepted",
     callback: functionCommonCallback,
   },
   FULFILLMENT_ORDERS_FULFILLMENT_REQUEST_REJECTED: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks/{",
+    callbackUrl:
+      "/api/webhooks/fulfillment_orders_fulfillment_request_rejected",
     callback: functionCommonCallback,
   },
   FULFILLMENT_ORDERS_FULFILLMENT_REQUEST_SUBMITTED: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks/{",
+    callbackUrl:
+      "/api/webhooks/fulfillment_orders_fulfillment_request_submitted",
     callback: functionCommonCallback,
   },
   FULFILLMENT_ORDERS_FULFILLMENT_SERVICE_FAILED_TO_COMPLETE: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks/{",
+    callbackUrl:
+      "/api/webhooks/fulfillment_orders_fulfillment_service_failed_to_complete",
     callback: functionCommonCallback,
   },
   FULFILLMENT_ORDERS_HOLD_RELEASED: {
@@ -398,12 +395,14 @@ shopify.webhooks.addHandlers({
   },
   FULFILLMENT_ORDERS_LINE_ITEMS_PREPARED_FOR_LOCAL_DELIVERY: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks/{",
+    callbackUrl:
+      "/api/webhooks/fulfillment_orders_line_items_prepared_for_local_delivery",
     callback: functionCommonCallback,
   },
   FULFILLMENT_ORDERS_LINE_ITEMS_PREPARED_FOR_PICKUP: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks/{",
+    callbackUrl:
+      "/api/webhooks/fulfillment_orders_line_items_prepared_for_pickup",
     callback: functionCommonCallback,
   },
   FULFILLMENT_ORDERS_MOVED: {
@@ -428,7 +427,8 @@ shopify.webhooks.addHandlers({
   },
   FULFILLMENT_ORDERS_SCHEDULED_FULFILLMENT_ORDER_READY: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks/{",
+    callbackUrl:
+      "/api/webhooks/fulfillment_orders_scheduled_fulfillment_order_ready",
     callback: functionCommonCallback,
   },
   INVENTORY_ITEMS_CREATE: {
@@ -546,6 +546,11 @@ shopify.webhooks.addHandlers({
     callbackUrl: "/api/webhooks/orders_partially_fulfilled",
     callback: functionCommonCallback,
   },
+  ORDERS_SHOPIFY_PROTECT_ELIGIBILITY_CHANGED: {
+    deliveryMethod: DeliveryMethod.Http,
+    callbackUrl: "/api/webhooks/orders_shopify_protect_eligibility_changed",
+    callback: functionCommonCallback,
+  },
   ORDERS_UPDATED: {
     deliveryMethod: DeliveryMethod.Http,
     callbackUrl: "/api/webhooks/orders_updated",
@@ -656,6 +661,11 @@ shopify.webhooks.addHandlers({
     callbackUrl: "/api/webhooks/profiles_update",
     callback: functionCommonCallback,
   },
+  PUBLICATIONS_DELETE: {
+    deliveryMethod: DeliveryMethod.Http,
+    callbackUrl: "/api/webhooks/publications_delete",
+    callback: functionCommonCallback,
+  },
   REFUNDS_CREATE: {
     deliveryMethod: DeliveryMethod.Http,
     callbackUrl: "/api/webhooks/refunds_create",
@@ -747,7 +757,6 @@ shopify.webhooks.addHandlers({
     callback: functionCommonCallback,
   },
   SHIPPING_ADDRESSES_CREATE: {
-    //MARK
     deliveryMethod: DeliveryMethod.Http,
     callbackUrl: "/api/webhooks/shipping_addresses_create",
     callback: functionCommonCallback,

@@ -1,8 +1,6 @@
-APP_SUBSCRIPTIONS_APPROACHING_CAPPED_AMOUNT
-
-{
+APP_SUBSCRIPTIONS_APPROACHING_CAPPED_AMOUNT{
   "app_subscription": {
-    "admin_graphql_api_id": "gid:\/\/shopify\/AppSubscription\/1029266967",
+    "admin_graphql_api_id": "gid:\/\/shopify\/AppSubscription\/1029267003",
     "name": "Webhook Test",
     "balance_used": 0.0,
     "capped_amount": "20.0",

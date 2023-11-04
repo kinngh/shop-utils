@@ -1,6 +1,4 @@
-FULFILLMENT_EVENTS_CREATE
-
-{
+FULFILLMENT_EVENTS_CREATE{
   "id": 1234567,
   "fulfillment_id": 123456,
   "status": "in_transit",

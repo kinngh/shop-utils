@@ -1,6 +1,4 @@
-COMPANY_CONTACTS_DELETE
-
-{
+COMPANY_CONTACTS_DELETE{
   "customer_admin_graphql_api_id": "gid:\/\/shopify\/Customer\/12123842227812391",
   "title": "Buyer",
   "locale": "en",

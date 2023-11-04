@@ -1,6 +1,4 @@
-DRAFT_ORDERS_CREATE
-
-{
+DRAFT_ORDERS_CREATE{
   "id": 890612572568261625,
   "note": null,
   "email": "jon@doe.ca",

@@ -1,6 +1,4 @@
-APP_UNINSTALLED
-
-{
+APP_UNINSTALLED{
   "id": 548380009,
   "name": "Super Toys",
   "email": "super@supertoys.com",
@@ -48,7 +46,6 @@ APP_UNINSTALLED
   "has_storefront": true,
   "finances": true,
   "primary_location_id": 655441491,
-  "cookie_consent_level": "implicit",
   "checkout_api_supported": true,
   "multi_location_enabled": true,
   "setup_required": false,

@@ -1,6 +1,4 @@
-PRODUCT_FEEDS_FULL_SYNC
-
-{
+PRODUCT_FEEDS_FULL_SYNC{
   "metadata": {
     "action": "CREATE",
     "type": "FULL",
