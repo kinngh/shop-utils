@@ -1,16 +1,21 @@
 {
   "name": "shop-utils",
-  "version": "1.0.0",
-  "description": "Generate related types, with some inconsistencies, in JSDocs and TypeScript types. Scripts auto generate so naming conventions could be way off.",
+  "version": "2024.07.15",
+  "description": "Generate mostly correct types for webhooks in JSDocs and TypeScript types.",
   "main": "index.js",
+  "scripts": {
+    "pretty": "prettier --write ./",
+    "update": "ncu -u",
+    "cloudflare": "cloudflared tunnel --url localhost:3000",
+    "------> Run In Index <------": "",
+    "start": "bun server/index.js",
+    "triggers": "bun scripts/webhook_trigger_creator.js",
+    "create": "bun scripts/jsdocs_creator.js; bun scripts/typescript_types_creator.js"
+  },
   "dependencies": {
     "dotenv": "^16.3.1",
+    "express": "^4.19.2",
+    "npm-check-updates": "^16.14.20",
     "prettier": "^3.0.3"
-  },
-  "scripts": {
-    "pretty": "prettier --write ./"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }

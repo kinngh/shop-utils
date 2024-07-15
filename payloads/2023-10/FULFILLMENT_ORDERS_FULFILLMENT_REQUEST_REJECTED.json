@@ -1,8 +1,0 @@
-FULFILLMENT_ORDERS_FULFILLMENT_REQUEST_REJECTED{
-  "fulfillment_order": {
-    "id": "gid:\/\/shopify\/FulfillmentOrder\/1",
-    "status": "open",
-    "request_status": "rejected"
-  },
-  "message": "Can't fulfill due to no inventory on product."
-}

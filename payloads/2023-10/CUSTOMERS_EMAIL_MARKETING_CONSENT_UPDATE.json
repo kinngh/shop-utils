@@ -1,9 +1,0 @@
-CUSTOMERS_EMAIL_MARKETING_CONSENT_UPDATE{
-  "customer_id": 706405506930370084,
-  "email_address": null,
-  "email_marketing_consent": {
-    "state": null,
-    "opt_in_level": null,
-    "consent_updated_at": null
-  }
-}

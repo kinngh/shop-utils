@@ -1,9 +1,0 @@
-FULFILLMENT_ORDERS_FULFILLMENT_SERVICE_FAILED_TO_COMPLETE
-
-{
-  "fulfillment_order": {
-    "id": "gid:\/\/shopify\/FulfillmentOrder\/1",
-    "status": "closed"
-  },
-  "message": "We broke the last item."
-}
