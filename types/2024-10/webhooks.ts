@@ -314,6 +314,8 @@ export interface ORDERS_RISK_ASSESSMENT_CHANGED {
   provider_title: null | string;
   risk_level: string;
   created_at: null | string;
+  order_id: null | string;
+  admin_graphql_api_order_id: null | string;
 }
 
 // Types for RETURNS_DECLINE
@@ -447,6 +449,7 @@ export interface ORDERS_PAID {
   customer_locale: string;
   device_id: null | string;
   discount_codes: any[];
+  duties_included: boolean;
   email: string;
   estimated_taxes: boolean;
   financial_status: string;
@@ -670,7 +673,20 @@ export interface ORDERS_PAID {
 }
 
 // Types for CUSTOMER_PAYMENT_METHODS_CREATE
-export interface CUSTOMER_PAYMENT_METHODS_CREATE {}
+export interface CUSTOMER_PAYMENT_METHODS_CREATE {
+  admin_graphql_api_id: string;
+  token: string;
+  customer_id: number;
+  admin_graphql_api_customer_id: string;
+  instrument_type: string;
+  payment_instrument: {
+    last_digits: string;
+    month: number;
+    year: number;
+    name: string;
+    brand: string;
+  };
+}
 
 // Types for SUBSCRIPTION_CONTRACTS_PAUSE
 export interface SUBSCRIPTION_CONTRACTS_PAUSE {
@@ -915,6 +931,7 @@ export interface ORDERS_FULFILLED {
   customer_locale: string;
   device_id: null | string;
   discount_codes: any[];
+  duties_included: boolean;
   email: string;
   estimated_taxes: boolean;
   financial_status: string;
@@ -1203,6 +1220,7 @@ export interface ORDERS_PARTIALLY_FULFILLED {
   customer_locale: string;
   device_id: null | string;
   discount_codes: any[];
+  duties_included: boolean;
   email: string;
   estimated_taxes: boolean;
   financial_status: string;
@@ -1712,13 +1730,19 @@ export interface DRAFT_ORDERS_CREATE {
       created_at: string;
       updated_at: string;
       payment_terms_id: number;
-      reference_id: null | string;
-      reference_type: null | string;
+      reference_id: number;
+      reference_type: string;
       issued_at: string;
       due_at: string;
       completed_at: string;
       amount: string;
       currency: string;
+      total_price: string;
+      total_price_currency: string;
+      balance_due: string;
+      balance_due_currency: string;
+      outstanding_balance: string;
+      outstanding_balance_currency: string;
     }[];
     can_pay_early: boolean;
   };
@@ -1843,6 +1867,7 @@ export interface ORDERS_CREATE {
   customer_locale: string;
   device_id: null | string;
   discount_codes: any[];
+  duties_included: boolean;
   email: string;
   estimated_taxes: boolean;
   financial_status: string;
@@ -2156,6 +2181,7 @@ export interface ORDERS_UPDATED {
   customer_locale: string;
   device_id: null | string;
   discount_codes: any[];
+  duties_included: boolean;
   email: string;
   estimated_taxes: boolean;
   financial_status: string;
@@ -2654,7 +2680,7 @@ export interface SCHEDULED_PRODUCT_LISTINGS_ADD {
       inventory_quantity: number;
       inventory_management: null | string;
       fulfillment_service: string;
-      weight: null | string;
+      weight: number;
       weight_unit: string;
       image_id: null | string;
       created_at: string;
@@ -2943,7 +2969,20 @@ export interface FULFILLMENT_ORDERS_FULFILLMENT_REQUEST_REJECTED {
 }
 
 // Types for CUSTOMER_PAYMENT_METHODS_UPDATE
-export interface CUSTOMER_PAYMENT_METHODS_UPDATE {}
+export interface CUSTOMER_PAYMENT_METHODS_UPDATE {
+  admin_graphql_api_id: string;
+  token: string;
+  customer_id: number;
+  admin_graphql_api_customer_id: string;
+  instrument_type: string;
+  payment_instrument: {
+    last_digits: string;
+    month: number;
+    year: number;
+    name: string;
+    brand: string;
+  };
+}
 
 // Types for COLLECTION_LISTINGS_ADD
 export interface COLLECTION_LISTINGS_ADD {
@@ -3178,13 +3217,19 @@ export interface DRAFT_ORDERS_UPDATE {
       created_at: string;
       updated_at: string;
       payment_terms_id: number;
-      reference_id: null | string;
-      reference_type: null | string;
+      reference_id: number;
+      reference_type: string;
       issued_at: string;
       due_at: string;
       completed_at: string;
       amount: string;
       currency: string;
+      total_price: string;
+      total_price_currency: string;
+      balance_due: string;
+      balance_due_currency: string;
+      outstanding_balance: string;
+      outstanding_balance_currency: string;
     }[];
     can_pay_early: boolean;
   };
@@ -3477,7 +3522,77 @@ export interface LOCATIONS_DEACTIVATE {
 }
 
 // Types for REFUNDS_CREATE
-export interface REFUNDS_CREATE {}
+export interface REFUNDS_CREATE {
+  id: number;
+  order_id: number;
+  created_at: string;
+  note: string;
+  user_id: number;
+  processed_at: string;
+  duties: any[];
+  total_duties_set: {
+    shop_money: { amount: string; currency_code: string };
+    presentment_money: { amount: string; currency_code: string };
+  };
+  return: null | string;
+  restock: boolean;
+  refund_shipping_lines: any[];
+  admin_graphql_api_id: string;
+  order_adjustments: any[];
+  refund_line_items: {
+    id: number;
+    quantity: number;
+    line_item_id: number;
+    location_id: null | string;
+    restock_type: string;
+    subtotal: number;
+    total_tax: number;
+    subtotal_set: {
+      shop_money: { amount: string; currency_code: string };
+      presentment_money: { amount: string; currency_code: string };
+    };
+    total_tax_set: {
+      shop_money: { amount: string; currency_code: string };
+      presentment_money: { amount: string; currency_code: string };
+    };
+    line_item: {
+      id: number;
+      variant_id: number;
+      title: string;
+      quantity: number;
+      sku: string;
+      variant_title: null | string;
+      vendor: null | string;
+      fulfillment_service: string;
+      product_id: number;
+      requires_shipping: boolean;
+      taxable: boolean;
+      gift_card: boolean;
+      name: string;
+      variant_inventory_management: string;
+      properties: any[];
+      product_exists: boolean;
+      fulfillable_quantity: number;
+      grams: number;
+      price: string;
+      total_discount: string;
+      fulfillment_status: null | string;
+      price_set: {
+        shop_money: { amount: string; currency_code: string };
+        presentment_money: { amount: string; currency_code: string };
+      };
+      total_discount_set: {
+        shop_money: { amount: string; currency_code: string };
+        presentment_money: { amount: string; currency_code: string };
+      };
+      discount_allocations: any[];
+      duties: any[];
+      admin_graphql_api_id: string;
+      tax_lines: any[];
+    };
+  }[];
+  transactions: any[];
+}
 
 // Types for PRODUCTS_UPDATE
 export interface PRODUCTS_UPDATE {
@@ -3554,7 +3669,20 @@ export interface CUSTOMERS_DISABLE {
 }
 
 // Types for CUSTOMER_PAYMENT_METHODS_REVOKE
-export interface CUSTOMER_PAYMENT_METHODS_REVOKE {}
+export interface CUSTOMER_PAYMENT_METHODS_REVOKE {
+  admin_graphql_api_id: string;
+  token: string;
+  customer_id: number;
+  admin_graphql_api_customer_id: string;
+  instrument_type: string;
+  payment_instrument: {
+    last_digits: string;
+    month: number;
+    year: number;
+    name: string;
+    brand: string;
+  };
+}
 
 // Types for PROFILES_UPDATE
 export interface PROFILES_UPDATE {
@@ -3570,7 +3698,7 @@ export interface METAOBJECTS_CREATE {
   display_name: string;
   id: string;
   definition_id: string;
-  fields: {};
+  fields: { example_key: string };
   created_by_staff_id: string;
   created_by_app_id: string;
   capabilities: { publishable: { status: string } };
@@ -3818,7 +3946,7 @@ export interface PRODUCT_LISTINGS_UPDATE {
       inventory_quantity: number;
       inventory_management: null | string;
       fulfillment_service: string;
-      weight: null | string;
+      weight: number;
       weight_unit: string;
       image_id: null | string;
       created_at: string;
@@ -4448,7 +4576,7 @@ export interface SCHEDULED_PRODUCT_LISTINGS_UPDATE {
       inventory_quantity: number;
       inventory_management: null | string;
       fulfillment_service: string;
-      weight: null | string;
+      weight: number;
       weight_unit: string;
       image_id: null | string;
       created_at: string;
@@ -4561,6 +4689,7 @@ export interface ORDERS_CANCELLED {
   customer_locale: string;
   device_id: null | string;
   discount_codes: any[];
+  duties_included: boolean;
   email: string;
   estimated_taxes: boolean;
   financial_status: string;
@@ -4808,7 +4937,7 @@ export interface METAOBJECTS_UPDATE {
   display_name: string;
   id: string;
   definition_id: string;
-  fields: {};
+  fields: { example_key: string };
   created_by_staff_id: string;
   created_by_app_id: string;
   capabilities: { publishable: { status: string } };
@@ -4876,7 +5005,7 @@ export interface PRODUCT_LISTINGS_ADD {
       inventory_quantity: number;
       inventory_management: null | string;
       fulfillment_service: string;
-      weight: null | string;
+      weight: number;
       weight_unit: string;
       image_id: null | string;
       created_at: string;

@@ -390,6 +390,8 @@
  * @property {null|string} provider_title
  * @property {string} risk_level
  * @property {null|string} created_at
+ * @property {null|string} order_id
+ * @property {null|string} admin_graphql_api_order_id
  */
 /**
  * @typedef {Object} RETURNS_DECLINE_decline
@@ -968,6 +970,7 @@
  * @property {string} customer_locale
  * @property {null|string} device_id
  * @property {Array} discount_codes
+ * @property {boolean} duties_included
  * @property {string} email
  * @property {boolean} estimated_taxes
  * @property {string} financial_status
@@ -1031,7 +1034,21 @@
  * @property {Array} returns
  */
 /**
+ * @typedef {Object} CUSTOMER_PAYMENT_METHODS_CREATE_payment_instrument
+ * @property {string} last_digits
+ * @property {number} month
+ * @property {number} year
+ * @property {string} name
+ * @property {string} brand
+ */
+/**
  * @typedef {Object} CUSTOMER_PAYMENT_METHODS_CREATE
+ * @property {string} admin_graphql_api_id
+ * @property {string} token
+ * @property {number} customer_id
+ * @property {string} admin_graphql_api_customer_id
+ * @property {string} instrument_type
+ * @property {CUSTOMER_PAYMENT_METHODS_CREATE_payment_instrument} payment_instrument
  */
 /**
  * @typedef {Object} SUBSCRIPTION_CONTRACTS_PAUSE_billing_policy
@@ -1717,6 +1734,7 @@
  * @property {string} customer_locale
  * @property {null|string} device_id
  * @property {Array} discount_codes
+ * @property {boolean} duties_included
  * @property {string} email
  * @property {boolean} estimated_taxes
  * @property {string} financial_status
@@ -2263,6 +2281,7 @@
  * @property {string} customer_locale
  * @property {null|string} device_id
  * @property {Array} discount_codes
+ * @property {boolean} duties_included
  * @property {string} email
  * @property {boolean} estimated_taxes
  * @property {string} financial_status
@@ -2624,13 +2643,19 @@
  * @property {string} created_at
  * @property {string} updated_at
  * @property {number} payment_terms_id
- * @property {null|string} reference_id
- * @property {null|string} reference_type
+ * @property {number} reference_id
+ * @property {string} reference_type
  * @property {string} issued_at
  * @property {string} due_at
  * @property {string} completed_at
  * @property {string} amount
  * @property {string} currency
+ * @property {string} total_price
+ * @property {string} total_price_currency
+ * @property {string} balance_due
+ * @property {string} balance_due_currency
+ * @property {string} outstanding_balance
+ * @property {string} outstanding_balance_currency
  */
 /**
  * @typedef {Object} DRAFT_ORDERS_CREATE_payment_terms
@@ -3190,6 +3215,7 @@
  * @property {string} customer_locale
  * @property {null|string} device_id
  * @property {Array} discount_codes
+ * @property {boolean} duties_included
  * @property {string} email
  * @property {boolean} estimated_taxes
  * @property {string} financial_status
@@ -3751,6 +3777,7 @@
  * @property {string} customer_locale
  * @property {null|string} device_id
  * @property {Array} discount_codes
+ * @property {boolean} duties_included
  * @property {string} email
  * @property {boolean} estimated_taxes
  * @property {string} financial_status
@@ -4137,7 +4164,7 @@
  * @property {number} inventory_quantity
  * @property {null|string} inventory_management
  * @property {string} fulfillment_service
- * @property {null|string} weight
+ * @property {number} weight
  * @property {string} weight_unit
  * @property {null|string} image_id
  * @property {string} created_at
@@ -4472,7 +4499,21 @@
  * @property {string} message
  */
 /**
+ * @typedef {Object} CUSTOMER_PAYMENT_METHODS_UPDATE_payment_instrument
+ * @property {string} last_digits
+ * @property {number} month
+ * @property {number} year
+ * @property {string} name
+ * @property {string} brand
+ */
+/**
  * @typedef {Object} CUSTOMER_PAYMENT_METHODS_UPDATE
+ * @property {string} admin_graphql_api_id
+ * @property {string} token
+ * @property {number} customer_id
+ * @property {string} admin_graphql_api_customer_id
+ * @property {string} instrument_type
+ * @property {CUSTOMER_PAYMENT_METHODS_UPDATE_payment_instrument} payment_instrument
  */
 /**
  * @typedef {Object} COLLECTION_LISTINGS_ADD_collection_listing
@@ -4716,13 +4757,19 @@
  * @property {string} created_at
  * @property {string} updated_at
  * @property {number} payment_terms_id
- * @property {null|string} reference_id
- * @property {null|string} reference_type
+ * @property {number} reference_id
+ * @property {string} reference_type
  * @property {string} issued_at
  * @property {string} due_at
  * @property {string} completed_at
  * @property {string} amount
  * @property {string} currency
+ * @property {string} total_price
+ * @property {string} total_price_currency
+ * @property {string} balance_due
+ * @property {string} balance_due_currency
+ * @property {string} outstanding_balance
+ * @property {string} outstanding_balance_currency
  */
 /**
  * @typedef {Object} DRAFT_ORDERS_UPDATE_payment_terms
@@ -5083,7 +5130,140 @@
  * @property {string} admin_graphql_api_id
  */
 /**
+ * @typedef {Object} REFUNDS_CREATE_total_duties_set_shop_money
+ * @property {string} amount
+ * @property {string} currency_code
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_total_duties_set_presentment_money
+ * @property {string} amount
+ * @property {string} currency_code
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_total_duties_set
+ * @property {REFUNDS_CREATE_total_duties_set_shop_money} shop_money
+ * @property {REFUNDS_CREATE_total_duties_set_presentment_money} presentment_money
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_subtotal_set_shop_money
+ * @property {string} amount
+ * @property {string} currency_code
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_subtotal_set_presentment_money
+ * @property {string} amount
+ * @property {string} currency_code
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_subtotal_set
+ * @property {REFUNDS_CREATE_refund_line_items_subtotal_set_shop_money} shop_money
+ * @property {REFUNDS_CREATE_refund_line_items_subtotal_set_presentment_money} presentment_money
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_total_tax_set_shop_money
+ * @property {string} amount
+ * @property {string} currency_code
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_total_tax_set_presentment_money
+ * @property {string} amount
+ * @property {string} currency_code
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_total_tax_set
+ * @property {REFUNDS_CREATE_refund_line_items_total_tax_set_shop_money} shop_money
+ * @property {REFUNDS_CREATE_refund_line_items_total_tax_set_presentment_money} presentment_money
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_line_item_price_set_shop_money
+ * @property {string} amount
+ * @property {string} currency_code
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_line_item_price_set_presentment_money
+ * @property {string} amount
+ * @property {string} currency_code
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_line_item_price_set
+ * @property {REFUNDS_CREATE_refund_line_items_line_item_price_set_shop_money} shop_money
+ * @property {REFUNDS_CREATE_refund_line_items_line_item_price_set_presentment_money} presentment_money
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_line_item_total_discount_set_shop_money
+ * @property {string} amount
+ * @property {string} currency_code
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_line_item_total_discount_set_presentment_money
+ * @property {string} amount
+ * @property {string} currency_code
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_line_item_total_discount_set
+ * @property {REFUNDS_CREATE_refund_line_items_line_item_total_discount_set_shop_money} shop_money
+ * @property {REFUNDS_CREATE_refund_line_items_line_item_total_discount_set_presentment_money} presentment_money
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items_line_item
+ * @property {number} id
+ * @property {number} variant_id
+ * @property {string} title
+ * @property {number} quantity
+ * @property {string} sku
+ * @property {null|string} variant_title
+ * @property {null|string} vendor
+ * @property {string} fulfillment_service
+ * @property {number} product_id
+ * @property {boolean} requires_shipping
+ * @property {boolean} taxable
+ * @property {boolean} gift_card
+ * @property {string} name
+ * @property {string} variant_inventory_management
+ * @property {Array} properties
+ * @property {boolean} product_exists
+ * @property {number} fulfillable_quantity
+ * @property {number} grams
+ * @property {string} price
+ * @property {string} total_discount
+ * @property {null|string} fulfillment_status
+ * @property {REFUNDS_CREATE_refund_line_items_line_item_price_set} price_set
+ * @property {REFUNDS_CREATE_refund_line_items_line_item_total_discount_set} total_discount_set
+ * @property {Array} discount_allocations
+ * @property {Array} duties
+ * @property {string} admin_graphql_api_id
+ * @property {Array} tax_lines
+ */
+/**
+ * @typedef {Object} REFUNDS_CREATE_refund_line_items
+ * @property {number} id
+ * @property {number} quantity
+ * @property {number} line_item_id
+ * @property {null|string} location_id
+ * @property {string} restock_type
+ * @property {number} subtotal
+ * @property {number} total_tax
+ * @property {REFUNDS_CREATE_refund_line_items_subtotal_set} subtotal_set
+ * @property {REFUNDS_CREATE_refund_line_items_total_tax_set} total_tax_set
+ * @property {REFUNDS_CREATE_refund_line_items_line_item} line_item
+ */
+/**
  * @typedef {Object} REFUNDS_CREATE
+ * @property {number} id
+ * @property {number} order_id
+ * @property {string} created_at
+ * @property {string} note
+ * @property {number} user_id
+ * @property {string} processed_at
+ * @property {Array} duties
+ * @property {REFUNDS_CREATE_total_duties_set} total_duties_set
+ * @property {null|string} return
+ * @property {boolean} restock
+ * @property {Array} refund_shipping_lines
+ * @property {string} admin_graphql_api_id
+ * @property {Array} order_adjustments
+ * @property {Array<REFUNDS_CREATE_refund_line_items>} refund_line_items
+ * @property {Array} transactions
  */
 /**
  * @typedef {Object} PRODUCTS_UPDATE_variants
@@ -5165,7 +5345,21 @@
  * @property {string} admin_graphql_api_id
  */
 /**
+ * @typedef {Object} CUSTOMER_PAYMENT_METHODS_REVOKE_payment_instrument
+ * @property {string} last_digits
+ * @property {number} month
+ * @property {number} year
+ * @property {string} name
+ * @property {string} brand
+ */
+/**
  * @typedef {Object} CUSTOMER_PAYMENT_METHODS_REVOKE
+ * @property {string} admin_graphql_api_id
+ * @property {string} token
+ * @property {number} customer_id
+ * @property {string} admin_graphql_api_customer_id
+ * @property {string} instrument_type
+ * @property {CUSTOMER_PAYMENT_METHODS_REVOKE_payment_instrument} payment_instrument
  */
 /**
  * @typedef {Object} PROFILES_UPDATE
@@ -5173,7 +5367,7 @@
  */
 /**
  * @typedef {Object} METAOBJECTS_CREATE_fields
- * @property {string} example-key
+ * @property {string} key
  */
 /**
  * @typedef {Object} METAOBJECTS_CREATE_capabilities_publishable
@@ -5439,7 +5633,7 @@
  * @property {number} inventory_quantity
  * @property {null|string} inventory_management
  * @property {string} fulfillment_service
- * @property {null|string} weight
+ * @property {number} weight
  * @property {string} weight_unit
  * @property {null|string} image_id
  * @property {string} created_at
@@ -6259,7 +6453,7 @@
  * @property {number} inventory_quantity
  * @property {null|string} inventory_management
  * @property {string} fulfillment_service
- * @property {null|string} weight
+ * @property {number} weight
  * @property {string} weight_unit
  * @property {null|string} image_id
  * @property {string} created_at
@@ -6789,6 +6983,7 @@
  * @property {string} customer_locale
  * @property {null|string} device_id
  * @property {Array} discount_codes
+ * @property {boolean} duties_included
  * @property {string} email
  * @property {boolean} estimated_taxes
  * @property {string} financial_status
@@ -6867,7 +7062,7 @@
  */
 /**
  * @typedef {Object} METAOBJECTS_UPDATE_fields
- * @property {string} example-key
+ * @property {string} key
  */
 /**
  * @typedef {Object} METAOBJECTS_UPDATE_capabilities_publishable
@@ -6943,7 +7138,7 @@
  * @property {number} inventory_quantity
  * @property {null|string} inventory_management
  * @property {string} fulfillment_service
- * @property {null|string} weight
+ * @property {number} weight
  * @property {string} weight_unit
  * @property {null|string} image_id
  * @property {string} created_at
