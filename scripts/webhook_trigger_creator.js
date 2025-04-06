@@ -5,7 +5,7 @@ import webhookTopics from "./webhookTopics.js";
 
 const tunnelUrl = process.env.TUNNEL_URL;
 const apiVersion = process.env.API_VERSION;
-const clientSecret = process.env.CLIENT_SECRET;
+const clientSecret = "asdasdasd";
 
 const commandLines = webhookTopics
   .map((topic) => {

@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 ## Dev only folders
+shopify.app.toml
 sanity/
 mental_well_being/
 emotional_stability/
@@ -143,3 +144,4 @@ dist
 
 # Misc
 .DS_Store
+.shopify
