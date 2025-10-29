@@ -1,7 +1,7 @@
 {
   "name": "shop-utils",
-  "version": "2025.07.05",
-  "description": "Generate mostly correct types for webhooks and Polaris WC.",
+  "version": "2025.10.29",
+  "description": "Generate mostly correct types for webhooks",
   "main": "index.js",
   "scripts": {
     "pretty": "prettier --write ./",
