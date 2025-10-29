@@ -23,11 +23,6 @@ app.post("/webhooks/:topic", async (req, res) => {
     return res.status(200).send({ message: "ok" });
   } catch (e) {
     console.error(`---> ERROR: ${req.params.topic}`);
-    fs.writeFile(
-      `${process.cwd()}/error-${topic}.json`,
-      JSON.stringify(e.message, null, 2),
-      (err) => (err ? console.log("Error writing the error to file") : null)
-    );
     return res.status(500).send({ error: true });
   }
 });
